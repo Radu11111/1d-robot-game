@@ -1,0 +1,35 @@
+<button onclick="moveLeft();drawMap()">◁</button>
+<span id="gameMap"></span>
+<button onclick="moveRight();drawMap()">▻</button>
+<script>
+const LEN = 20
+let rx = 1
+
+function drawMap() {
+    gameMap.innerHTML = ""
+    for(let x=1; x <= LEN; x++) {
+        if(x == rx) {
+          gameMap.innerHTML += "►"
+        } else {
+        gameMap.innerHTML += "┄"
+        }
+    }
+}
+//hw2: limit movement start<>end -done
+function moveLeft() {
+    if(rx <= 1) {
+        rx = 1
+    } else {
+        rx--
+    }
+    //HW1 :FINISH THIS FUNCTION -DONE
+}
+function moveRight() {
+    if(rx >= 20) {
+        rx = 20
+    } else {
+       rx++ 
+    }
+}
+drawMap()
+</script>
